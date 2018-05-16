@@ -1,0 +1,75 @@
+idworker:
+  workerId: 1         #工作机器ID
+  datacenterId: 1     #数据中心ID
+  sequence: 1         #毫秒内序列
+server:
+  port: 80
+  servlet:
+    context-path: /test
+
+spring:
+  profiles:
+      active: dev
+  mvc:
+      static-path-pattern: /static/**
+#      view:
+#        prefix: /WEB-INF/view
+  devtools:
+    restart:
+      enabled: false #是否开启开发者工具（true/false）
+      additional-paths: src/main/java
+      exclude: static/**,templates/
+  aop:
+    proxy-target-class: true #false为启用jdk默认动态代理,true为cglib动态代理
+  jpa:
+    database: MYSQL
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+      naming:
+        #遇到大写字母 加”_”的命名(PhysicalNamingStrategyStandardImpl这个为无修改命名)
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  thymeleaf:
+    cache: false
+---
+##########################################################
+###################  开发环境的profile  ###################
+##########################################################
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: 111111
+    db-name: auth
+    filters: log4j,wall,mergeStat
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    useGlobalDataSourceStat: true
+
+---
+spring:
+  profiles: produce
+  datasource:
+      url: jdbc:mysql://127.0.0.1:3306/guns?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+      username: root
+      password: 111111
+      filters: log4j,wall,mergeStat
+
+
