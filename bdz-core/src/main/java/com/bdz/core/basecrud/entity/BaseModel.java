@@ -1,4 +1,4 @@
-package com.bdz.core.basecrud.vo;
+package com.bdz.core.basecrud.entity;
 
 
 import org.hibernate.annotations.GenericGenerator;
@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.SequenceGenerator;
 
 import lombok.Data;
 
@@ -19,7 +18,7 @@ import lombok.Data;
 @Data
 public class BaseModel {
   @Id
-  @GenericGenerator(name="seq_id", strategy="com.bdz.core.util.CustomizedIdGenerator")
+  @GenericGenerator(name="seq_id", strategy="com.bdz.core.generator.IdGenerator")
   @GeneratedValue(generator="seq_id")
   private Long uuid;
   private String oper;

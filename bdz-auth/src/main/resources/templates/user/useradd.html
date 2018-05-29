@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <form id="userForm" class="layui-form">
+    <div class="layui-form-item">
+      <label class="layui-form-label">用户名</label>
+      <div class="layui-input-block">
+        <input type="text" id="loginName" name="loginName" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">密码</label>
+      <div class="layui-input-inline">
+        <input type="password" id="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+      </div>
+      <div class="layui-form-mid layui-word-aux">辅助文字</div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <button class="layui-btn" lay-submit lay-filter="userForm">立即提交</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        <button class="layui-btn" id="back">返回</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    //Demo
+    layui.use('form', function () {
+      var form = layui.form;
+//监听提交
+      form.on('submit(userForm)', function (data) {
+        $('#userForm').ajaxSubmit(      //ajax方式提交表单
+            {
+              url: contextPath+'/user/add',
+              type: 'post',
+              dataType: 'json',
+              success: function (data) {
+                if (data.code == "0" ) {
+                  layer.msg("保存成功!");
+                  window.history.back();
+                } else {
+                  layer.msg(data.msg);
+                }
+              },
+              clearForm: false,//禁止清楚表单
+              resetForm: false //禁止重置表单
+            });
+
+        return false;
+      });
+
+    });
+  </script>
+</div>
+</body>
+</html>

@@ -3,11 +3,8 @@ package com.bdz.core.basecrud.service.impl;
 
 import com.bdz.core.basecrud.dao.BaseDao;
 import com.bdz.core.basecrud.service.BaseService;
-import com.bdz.core.basecrud.vo.BaseModel;
-import com.bdz.core.util.IdWorker;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
+import com.bdz.core.basecrud.entity.BaseModel;
+import com.bdz.core.generator.IdWorker;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -33,6 +30,11 @@ public class BaseServiceImpl<M extends BaseModel> implements BaseService {
     baseModel.setUuid(idWorker.nextId());
     baseModel.setDelFlag("0");
     baseModel.setOpeDate(DateFormat.getDateInstance().format(new Date()));
+    return (BaseModel) myDao.save(baseModel);
+  }
+
+  @Override
+  public BaseModel update(BaseModel baseModel) {
     return (BaseModel) myDao.save(baseModel);
   }
 }

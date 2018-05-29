@@ -1,4 +1,4 @@
-package com.bdz.auth.config;
+package com.bdz.core.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ import lombok.Setter;
  * @date 2018/5/15 15:53
  */
 @Configuration
-@ConfigurationProperties(prefix = "idworker")
+@ConfigurationProperties(prefix = "bdz.idworker")
 //@PropertySource("classpath:application-idworker.yml")
 public class IdWorkerConfig {
 //  public static final String PREFIX = "idworker";

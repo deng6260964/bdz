@@ -1,7 +1,7 @@
 package com.bdz.core.basecrud.controller;
 
 
-import com.bdz.core.basecrud.vo.BaseModel;
+import com.bdz.core.basecrud.entity.BaseModel;
 
 /**
  * @author bdz

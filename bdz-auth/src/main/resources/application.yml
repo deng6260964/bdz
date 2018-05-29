@@ -1,7 +1,10 @@
-idworker:
-  workerId: 1         #工作机器ID
-  datacenterId: 1     #数据中心ID
-  sequence: 1         #毫秒内序列
+bdz:
+  idworker:
+    workerId: 1         #工作机器ID
+    datacenterId: 1     #数据中心ID
+    sequence: 1         #毫秒内序列
+  core:
+    generatorType: com.bdz.auth.util.IdGeneratorImpl
 server:
   port: 80
   servlet:
@@ -30,7 +33,6 @@ spring:
       naming:
         #遇到大写字母 加”_”的命名(PhysicalNamingStrategyStandardImpl这个为无修改命名)
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-    naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
     database-platform: org.hibernate.dialect.MySQL5Dialect
   thymeleaf:
     cache: false

@@ -1,6 +1,7 @@
-package com.bdz.auth.util;
+package com.bdz.core.generator.impl;
 
-import com.bdz.core.util.IdGenerator;
+import com.bdz.core.generator.CustomizedIdGenerator;
+import com.bdz.core.generator.IdWorkerSingleton;
 
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
  * @date 2018/5/16 11:49
  */
 @Service
-public class IdGeneratorImpl implements IdGenerator {
+public class IdGeneratorImpl implements CustomizedIdGenerator {
   /**
    * SnowFlake算法ID的实现
    * @return

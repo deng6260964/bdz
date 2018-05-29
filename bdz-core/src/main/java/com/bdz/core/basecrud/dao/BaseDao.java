@@ -1,10 +1,8 @@
 package com.bdz.core.basecrud.dao;
 
-import com.bdz.core.basecrud.vo.BaseModel;
+import com.bdz.core.basecrud.entity.BaseModel;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 

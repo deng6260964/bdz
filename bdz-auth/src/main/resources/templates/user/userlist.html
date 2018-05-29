@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout/layout}">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="layui-container">
+    <div class="layui-row" style="margin-top:10px;">
+      <div class="layui-col-md9">
+        <div class="layui-form-item">
+          <label class="layui-form-label">用户名：</label>
+          <div class="layui-input-inline">
+            <input type="text" name="password" required lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md3">
+        <button class="layui-btn">查询</button>
+      </div>
+    </div>
+    <div class="layui-row" style="margin-top:10px;text-align: right">
+      <a th:href="@{{path}/user/toAdd(path=${#servletContext.contextPath})}" class="layui-btn">新增</a>
+    </div>
+    <table id="demo" lay-filter="test"></table>
+  </div>
+  <script th:inline="javascript">
+    layui.use('table', function () {
+      var table = layui.table;
+      //第一个实例
+      table.render({
+        elem: '#demo'
+        , height: 315
+        , url: contextPath+'/user/list' //数据接口
+        , page: true //开启分页
+        , cols: [[ //表头
+          {field: 'loginName', title: '用户名', width: "50%"}
+          , {field: 'password', title: '密码', width: "50%", sort: true}
+        ]]
+      });
+
+    });
+  </script>
+</div>
+</body>
+</html>

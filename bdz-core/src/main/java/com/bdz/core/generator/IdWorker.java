@@ -1,4 +1,4 @@
-package com.bdz.core.util;
+package com.bdz.core.generator;
 
 /**
  * 摘取网上的SnowFlake算法

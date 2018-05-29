@@ -1,6 +1,6 @@
 package com.bdz.auth;
 
-import com.bdz.auth.config.IdWorkerConfig;
+import com.bdz.core.config.IdWorkerConfig;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;

@@ -8,19 +8,23 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="stylesheet" th:href="@{{path}/static/layui/css/layui.css(path=${#servletContext.contextPath})}">
-  <script th:src="@{{path}/static/layui/layui.js(path=${#servletContext.contextPath})}"></script>
+  <link rel="stylesheet" th:href="@{/static/layui/css/layui.css}">
+  <script th:src="@{/static/js/common.js}"></script>
+  <script th:src="@{/static/layui/layui.js}"></script>
+  <script th:src="@{/static/jquery/jquery-3.3.1.min.js}"></script>
+  <script th:src="@{/static/jquery/jquery.form.js}"></script>
 </head>
+<script>
+  var contextPath = "[[${#servletContext.contextPath}]]";
+</script>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
   <div th:replace="layout/header :: header">
   </div>
 
   <div th:replace="layout/left :: left">默认左侧菜单栏</div>
-  <div class="layui-body">
-    <div style="padding: 15px;" layout:fragment="content">
+  <div class="layui-body" layout:fragment="content">
 
-    </div>
   </div>
 
   <div th:replace="layout/footer :: footer">&copy; 2017 The Static Templates</div>

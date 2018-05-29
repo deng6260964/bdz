@@ -1,7 +1,7 @@
-package com.bdz.auth.util;
+package com.bdz.core.generator;
 
-import com.bdz.auth.config.IdWorkerConfig;
-import com.bdz.core.util.IdWorker;
+
+import com.bdz.core.config.IdWorkerConfig;
 import com.bdz.core.util.SpringContextUtils;
 
 /**

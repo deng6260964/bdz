@@ -1,4 +1,4 @@
-package com.bdz.auth.user.vo;
+package com.bdz.auth.user.entity;
 
 /**
  * @author bdz

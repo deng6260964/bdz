@@ -1,15 +1,11 @@
-package com.bdz.auth.user.vo;
+package com.bdz.auth.user.entity;
 
 
-import com.bdz.core.basecrud.vo.BaseModel;
+import com.bdz.core.basecrud.entity.BaseModel;
 
 import java.io.Serializable;
-import java.util.Objects;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 import lombok.Data;
 

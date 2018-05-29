@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>bdz-auth</title>
 </head>
 <body>
 <div th:fragment="left" class="layui-side layui-bg-black">
@@ -12,7 +12,7 @@
       <li class="layui-nav-item layui-nav-itemed">
         <a class="" href="javascript:;">所有商品</a>
         <dl class="layui-nav-child">
-          <dd><a th:href="@{{path}/auth/user/test2(path=${#servletContext.contextPath})}">列表一</a></dd>
+          <dd><a th:href="@{{path}/user/toList(path=${#servletContext.contextPath})}">列表一</a></dd>
           <dd><a href="javascript:;">列表二</a></dd>
           <dd><a href="javascript:;">列表三</a></dd>
           <dd><a href="">超链接</a></dd>
