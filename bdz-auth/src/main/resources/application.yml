@@ -4,7 +4,7 @@ bdz:
     datacenterId: 1     #数据中心ID
     sequence: 1         #毫秒内序列
   core:
-    generatorType: com.bdz.auth.util.IdGeneratorImpl
+    generatorType: snowFlake
 server:
   port: 80
   servlet:

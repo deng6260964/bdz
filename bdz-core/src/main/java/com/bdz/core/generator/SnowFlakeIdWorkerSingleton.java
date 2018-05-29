@@ -9,16 +9,16 @@ import com.bdz.core.util.SpringContextUtils;
  * @author bdz
  * @date 2018/5/15 16:41
  */
-public enum IdWorkerSingleton {
+public enum SnowFlakeIdWorkerSingleton {
   INSTANCE;
 
-  private IdWorker singleton;
+  private SnowFlakeIdWorker singleton;
 
-  private IdWorkerSingleton(){
+  private SnowFlakeIdWorkerSingleton(){
     IdWorkerConfig idWorkerConfig = SpringContextUtils.getBean(IdWorkerConfig.class);
-    singleton = new IdWorker(idWorkerConfig.getWorkerId(),idWorkerConfig.getDatacenterId(),idWorkerConfig.getSequence());
+    singleton = new SnowFlakeIdWorker(idWorkerConfig.getWorkerId(), idWorkerConfig.getDatacenterId(), idWorkerConfig.getSequence());
   }
-  public IdWorker getInstance(){
+  public SnowFlakeIdWorker getInstance(){
     return singleton;
   }
 }

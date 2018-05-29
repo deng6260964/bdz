@@ -4,7 +4,7 @@ package com.bdz.core.basecrud.service.impl;
 import com.bdz.core.basecrud.dao.BaseDao;
 import com.bdz.core.basecrud.service.BaseService;
 import com.bdz.core.basecrud.entity.BaseModel;
-import com.bdz.core.generator.IdWorker;
+import com.bdz.core.generator.SnowFlakeIdWorker;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -24,17 +24,17 @@ public class BaseServiceImpl<M extends BaseModel> implements BaseService {
     this.myDao = myDao;
   }
   @Getter@Setter
-  private IdWorker idWorker;
+  private SnowFlakeIdWorker idWorker;
   @Override
   public BaseModel create(BaseModel baseModel) {
-    baseModel.setUuid(idWorker.nextId());
     baseModel.setDelFlag("0");
-    baseModel.setOpeDate(DateFormat.getDateInstance().format(new Date()));
+    baseModel.setCreateTime(DateFormat.getDateInstance().format(new Date()));
     return (BaseModel) myDao.save(baseModel);
   }
 
   @Override
   public BaseModel update(BaseModel baseModel) {
+    baseModel.setOpeTime(DateFormat.getDateInstance().format(new Date()));
     return (BaseModel) myDao.save(baseModel);
   }
 }

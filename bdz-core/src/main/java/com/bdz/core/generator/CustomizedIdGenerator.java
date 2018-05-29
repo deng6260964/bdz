@@ -7,8 +7,8 @@ package com.bdz.core.generator;
  */
 public interface CustomizedIdGenerator {
   /**
-   * 获取SnonFlake算法的ID
+   * 获取生成的ID
    * @return
    */
-  Long getSnowFlakeId();
+  Long getGenerateId();
 }

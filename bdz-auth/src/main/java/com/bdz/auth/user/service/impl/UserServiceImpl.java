@@ -3,17 +3,14 @@ package com.bdz.auth.user.service.impl;
 import com.bdz.auth.user.dao.UserDAO;
 import com.bdz.auth.user.service.UserService;
 import com.bdz.auth.user.entity.AuthUser;
-import com.bdz.core.generator.IdWorkerSingleton;
+import com.bdz.core.generator.SnowFlakeIdWorkerSingleton;
 import com.bdz.core.basecrud.service.impl.BaseServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * @author bdz
@@ -36,7 +33,7 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 
   @Override
   public AuthUser add(AuthUser user) {
-    this.setIdWorker(IdWorkerSingleton.INSTANCE.getInstance());
+//    this.setIdWorker(SnowFlakeIdWorkerSingleton.INSTANCE.getInstance());
     return (AuthUser) super.create(user);
   }
 }

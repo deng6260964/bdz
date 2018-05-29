@@ -5,7 +5,7 @@ package com.bdz.core.generator;
  * @author bdz
  * @date 2018/5/15 15:25
  */
-public class IdWorker{
+public class SnowFlakeIdWorker {
 
   /** 工作机器ID(0~31) */
   private long workerId;
@@ -14,7 +14,7 @@ public class IdWorker{
   /** 毫秒内序列(0~4095) */
   private long sequence;
 
-  public IdWorker(long workerId, long datacenterId, long sequence){
+  public SnowFlakeIdWorker(long workerId, long datacenterId, long sequence){
     // sanity check for workerId
     if (workerId > maxWorkerId || workerId < 0) {
       throw new IllegalArgumentException(String.format("worker Id can't be greater than %d or less than 0",maxWorkerId));
