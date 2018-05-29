@@ -16,8 +16,11 @@ public class CustomizedIdFactory {
   }
 
   public CustomizedIdGenerator getGenrator() {
-    Map<String,CustomizedIdGenerator>
-        customizedIdGeneratorMap = SpringContextUtils.getBeans(CustomizedIdGenerator.class);
+    //获取自定义ID生成器
+    Map<String, CustomizedIdGenerator> customizedIdGeneratorMap =
+        SpringContextUtils.getBeans(CustomizedIdGenerator.class);
+    //根据配置返回生成器
+    //TODO 异常处理
     return customizedIdGeneratorMap.get(genratorType);
   }
 }

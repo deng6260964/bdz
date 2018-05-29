@@ -33,7 +33,6 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 
   @Override
   public AuthUser add(AuthUser user) {
-//    this.setIdWorker(SnowFlakeIdWorkerSingleton.INSTANCE.getInstance());
     return (AuthUser) super.create(user);
   }
 }
