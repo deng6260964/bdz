@@ -15,6 +15,11 @@ public class CustomizedIdFactory {
     this.genratorType = genratorType;
   }
 
+  /**
+   * 获取生成器
+   * @author bdz
+   * @return CustomizedIdGenerator
+   */
   public CustomizedIdGenerator getGenrator() {
     //获取自定义ID生成器
     Map<String, CustomizedIdGenerator> customizedIdGeneratorMap =

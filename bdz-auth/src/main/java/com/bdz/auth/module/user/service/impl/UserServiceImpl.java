@@ -1,9 +1,8 @@
-package com.bdz.auth.user.service.impl;
+package com.bdz.auth.module.user.service.impl;
 
-import com.bdz.auth.user.dao.UserDAO;
-import com.bdz.auth.user.service.UserService;
-import com.bdz.auth.user.entity.AuthUser;
-import com.bdz.core.generator.SnowFlakeIdWorkerSingleton;
+import com.bdz.auth.module.user.dao.UserDao;
+import com.bdz.auth.module.user.entity.AuthUser;
+import com.bdz.auth.module.user.service.UserService;
 import com.bdz.core.basecrud.service.impl.BaseServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +17,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImpl extends BaseServiceImpl implements UserService {
-  private UserDAO userDAO;
+  private UserDao userDAO;
   @Autowired
-  public void setUserDAO(UserDAO userDAO){
+  public void setUserDAO(UserDao userDAO){
     this.userDAO = userDAO;
     super.setMyDao(userDAO);
   }

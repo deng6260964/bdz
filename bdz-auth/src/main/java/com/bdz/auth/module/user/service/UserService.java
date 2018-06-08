@@ -1,11 +1,9 @@
-package com.bdz.auth.user.service;
+package com.bdz.auth.module.user.service;
 
-import com.bdz.auth.user.entity.AuthUser;
+import com.bdz.auth.module.user.entity.AuthUser;
 import com.bdz.core.basecrud.service.BaseService;
 
 import org.springframework.data.domain.Page;
-
-import java.util.List;
 
 /**
  * @author bdz

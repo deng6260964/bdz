@@ -1,4 +1,4 @@
-package com.bdz.auth.user.entity;
+package com.bdz.auth.module.user.entity;
 
 /**
  * @author bdz

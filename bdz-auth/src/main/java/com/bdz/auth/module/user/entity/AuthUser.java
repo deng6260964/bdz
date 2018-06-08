@@ -1,4 +1,5 @@
-package com.bdz.auth.user.entity;
+package com.bdz.auth.module.user.entity;
+
 
 
 import com.bdz.core.basecrud.entity.BaseModel;

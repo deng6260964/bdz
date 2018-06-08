@@ -1,6 +1,9 @@
 package com.bdz.core.beans;
 
+import org.springframework.data.domain.Page;
+
 import java.io.Serializable;
+import java.util.List;
 
 import lombok.Data;
 
@@ -37,6 +40,11 @@ public class ResultBean<T> implements Serializable {
     super();
     this.data = data;
     this.count = count;
+  }
+  public ResultBean(Page<T> page) {
+    super();
+    this.data = (T) page.getContent();
+    this.count = Integer.valueOf(page.getTotalElements()+"");
   }
 
   public ResultBean(Throwable e) {

@@ -4,7 +4,7 @@ bdz:
     datacenterId: 1     #数据中心ID
     sequence: 1         #毫秒内序列
   core:
-    generatorType: snowFlake
+    generatorType: snowFlake  #ID生成算法
 server:
   port: 80
   servlet:
@@ -12,7 +12,7 @@ server:
 
 spring:
   profiles:
-      active: dev
+      active: produce
   mvc:
       static-path-pattern: /static/**
 #      view:
@@ -69,9 +69,26 @@ spring:
 spring:
   profiles: produce
   datasource:
-      url: jdbc:mysql://127.0.0.1:3306/guns?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+      url: jdbc:mysql://192.168.1.146:3306/auth?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
       username: root
       password: 111111
+      db-name: auth
       filters: log4j,wall,mergeStat
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.jdbc.Driver
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      useGlobalDataSourceStat: true
 
 
