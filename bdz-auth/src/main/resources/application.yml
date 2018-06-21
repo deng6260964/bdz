@@ -12,7 +12,7 @@ server:
 
 spring:
   profiles:
-      active: produce
+      active: dev
   mvc:
       static-path-pattern: /static/**
 #      view:
