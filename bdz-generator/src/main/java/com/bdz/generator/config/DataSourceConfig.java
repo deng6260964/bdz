@@ -8,8 +8,8 @@ import lombok.Data;
  */
 @Data
 public class DataSourceConfig {
-  private String URL = "jdbc:mysql://127.0.0.1:3306/auth";
-  private String USER = "root";
-  private String PASSWORD = "111111";
-  private String DRIVER = "com.mysql.jdbc.Driver";
+  private String url = "jdbc:mysql://127.0.0.1:3306/auth";
+  private String user = "root";
+  private String password = "111111";
+  private String driver = "com.mysql.jdbc.Driver";
 }

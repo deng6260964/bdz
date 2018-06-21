@@ -17,11 +17,11 @@ import com.evada.inno.core.util.AssertUtils;
 * @author ${author}
 * @date ${date}
 */
-@Rest(${table_name}.class)
+@Rest("/${table_name?uncap_first}")
 public class ${table_name}Controller {
 
     @Autowired
-    private I${table_name}Service ${table_name?uncap_first}Service;
+    private ${table_name}Service ${table_name?uncap_first}Service;
 
     /**
     * 描述：根据Id 查询

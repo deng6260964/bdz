@@ -42,6 +42,11 @@
         <artifactId>bdz-core</artifactId>
         <version>${bdz.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.bdz</groupId>
+        <artifactId>bdz-generator</artifactId>
+        <version>${bdz.version}</version>
+      </dependency>
       <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
       <dependency>
         <groupId>com.alibaba</groupId>
