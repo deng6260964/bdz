@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -77,12 +78,14 @@ public class UserController extends BaseController<AuthUser, AuthUserQueryModel>
   public void test() {
     DataSource dataSource = (DataSource) SpringContextUtils.getBean("dataSource");
     try {
+      Connection connection = dataSource.getConnection();
       TemplateDTO templateDTO = new TemplateDTO();
       templateDTO.setAuthor("bdz");
       templateDTO.setTableName("auth_role");
       templateDTO.setCurrentDate("2018/06/12");
       templateDTO.setDiskPath("E://");
-      CodeGenerator.generate(dataSource.getConnection(),templateDTO);
+      CodeGenerator.generate(connection, templateDTO);
+      connection.close();
     } catch (SQLException e) {
       e.printStackTrace();
     }

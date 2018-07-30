@@ -22,10 +22,7 @@ public class CodeGenerator {
       GenerateUtils.generateModelFile(
           resultSet,
           templateDTO);
-      GenerateUtils.generateFile("Controller.java","controller.ftl",new TemplateDTO());
-      GenerateUtils.generateFile("Service.java","service.ftl",new TemplateDTO());
-      GenerateUtils.generateFile("ServiceImpl.java","serviceImpl.ftl",new TemplateDTO());
-      GenerateUtils.generateFile("Dao.java","dao.ftl",new TemplateDTO());
+      GenerateUtils.generateFile(templateDTO);
     } catch (Exception e) {
       e.printStackTrace();
     }
